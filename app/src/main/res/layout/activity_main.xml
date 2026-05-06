@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Layout file for main activity. First screen seen by user. -->
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#004643"
+    android:focusable="true"
+    android:clickable="true"
+    tools:context=".MainActivity">
+    <!-- Text component used to display messages. -->
+    <com.google.android.material.textview.MaterialTextView
+        android:id="@+id/textEmptyMessage"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textAlignment="center"
+        android:textColor="#FFFFFF"
+        android:visibility="gone"
+        android:padding="16dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintWidth_max="480dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:layout_margin="25dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
+            <!-- Text input component. Used as a search bar. -->
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/search"
+                android:layout_marginEnd="10dp"
+                app:boxBackgroundMode="filled"
+                app:boxCornerRadiusBottomEnd="10dp"
+                app:boxCornerRadiusBottomStart="10dp"
+                app:boxCornerRadiusTopEnd="10dp"
+                app:boxCornerRadiusTopStart="10dp"
+                app:boxStrokeWidth="0dp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/editSearch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#004643"
+                    android:textSize="12sp" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <!-- Spinner component. Used to sort displayed items. -->
+            <Spinner
+                android:id="@+id/spinnerSort"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:background="#F0EDE5"
+                android:textColor="#004643"
+                android:entries="@array/spinner_sort"/>
+
+        </LinearLayout>
+        <!-- Chip component. Shows actively selected journal. -->
+        <com.google.android.material.chip.Chip
+            android:id="@+id/chipActiveFilter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxLines="1"
+            android:visibility="gone"
+            android:text="@string/chip_showing"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            app:chipBackgroundColor="#82D9FF"
+            app:closeIconEnabled="true" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp">
+            <!-- Recycler view component. Used to display items. -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recyclerMain"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="vertical"
+                android:fadeScrollbars="true"
+                android:scrollbarStyle="outsideOverlay"
+                android:overScrollMode="always"
+                android:scrollbarThumbVertical="@drawable/scrollbar_thumb"
+                android:scrollbarTrackVertical="@drawable/scrollbar_track"
+                tools:listitem="@layout/item_journal" />
+            <!-- Simple view with a gradient background. -->
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/fade_bottom_gradient"
+                android:clickable="false"
+                android:focusable="false" />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <!-- Journal/Entry toggle group component. -->
+            <com.google.android.material.button.MaterialButtonToggleGroup
+                android:id="@+id/toggleViewMode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="10dp"
+                app:singleSelection="true">
+                <!-- Journal Button component. Displays Journals. -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnToggleJournals"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:text="@string/journals"
+                    android:textColor="@color/toggle_text"
+                    android:textSize="18sp"
+                    app:backgroundTint="@color/toggle_bg"
+                    app:cornerRadius="10dp"
+                    app:strokeColor="#00000000" />
+                <!-- Entry Button component. Displays Entries. -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnToggleEntries"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:paddingTop="16dp"
+                    android:paddingBottom="16dp"
+                    android:text="@string/entries"
+                    android:textColor="@color/toggle_text"
+                    android:textSize="18sp"
+                    app:backgroundTint="@color/toggle_bg"
+                    app:cornerRadius="10dp"
+                    app:strokeColor="#00000000" />
+
+            </com.google.android.material.button.MaterialButtonToggleGroup>
+            <!--
+            Floating Action Button component.
+            Used to add new journals or entries.
+            -->
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/fabMain"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="2"
+                android:contentDescription="@string/main_action"
+                android:src="@drawable/outline_add_2_24"
+                app:backgroundTint="#F0EDE5" />
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

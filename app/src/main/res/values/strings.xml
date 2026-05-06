@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">JournalApp</string>
+    <string name="btnEntry">Add Entry</string>
+    <string name="btnView">View Entries</string>
+    <string name="btnCreateJournal">Create New Journal</string>
+    <string name="journal_title">Journal Title</string>
+    <string name="journal_description">Journal Description</string>
+    <string name="close">Close</string>
+    <string name="entries">Entries</string>
+    <string name="journals">Journals</string>
+    <string name="search">Search</string>
+    <string name="main_action">Main Action</string>
+    <string name="sort">Sort: Date</string>
+    <string name="save">Save</string>
+    <string name="entry_title">Entry Title</string>
+    <string name="write_your_memory">Write your memory…</string>
+    <string name="attach_file">Attach file</string>
+    <string name="example_date">Created: 13 April 2026</string>
+    <string name="entry_example">This is a preview of the entry content. It will truncate after a few lines…</string>
+    <string name="journal_name_example">Travel Journal</string>
+    <string name="view">View</string>
+    <string name="delete">Delete</string>
+    <string name="chip_showing">Showing:</string>
+    <string name="filter_showing">Showing: %1$s</string>
+    <string name="selected_journal">Selected Journal: %1$s</string>
+    <string-array name="spinner_sort">
+        <item>Sort: Date Latest</item>
+        <item>Sort: Date Oldest</item>
+        <item>Sort: Title A-Z</item>
+        <item>Sort: Title Z–A</item>
+    </string-array>
+</resources>

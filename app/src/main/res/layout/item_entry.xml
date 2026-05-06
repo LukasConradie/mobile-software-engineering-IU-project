@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Layout file for Entry Items. -->
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="8dp"
+    android:clickable="true"
+    android:focusable="true"
+    app:cardCornerRadius="10dp"
+    app:cardBackgroundColor="#F0EDE5"
+    app:strokeColor="#004643"
+    app:strokeWidth="2dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp">
+        <!-- Title Text View component. -->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textEntryTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/entry_title"
+            android:textColor="#004643"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+        <!-- Entry's Parent Journal Text View component. -->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textJournalParent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/journal_name_example"
+            android:textColor="#004643"
+            android:textSize="14sp"
+            android:alpha="0.7" />
+        <!-- Entry Content Text View component. -->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textEntryPreview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:maxLines="3"
+            android:scrollHorizontally="true"
+            android:ellipsize="end"
+            android:text="@string/entry_example"
+            android:textColor="#004643"
+            android:textSize="14sp"
+            android:alpha="0.9"/>
+        <!-- Date Text View component. -->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/textEntryDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/example_date"
+            android:textColor="#004643"
+            android:textSize="12sp"
+            android:alpha="0.6"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:layout_marginTop="8dp"
+            android:orientation="horizontal">
+            <!-- View/Edit Button component. -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnEditEntry"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/view"
+                android:textColor="#004643"
+                android:textSize="14sp" />
+            <!-- Delete Button component. -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnDeleteEntry"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/delete"
+                android:textColor="#DB0C2D"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>

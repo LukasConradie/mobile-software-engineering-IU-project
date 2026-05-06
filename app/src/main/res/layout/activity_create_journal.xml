@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+Layout file for create/view journal activity.
+Certain components are visible or gone depending on context.
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/createJournal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#004643"
+    tools:context=".CreateJournalActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:layout_margin="25dp"
+        app:layout_constraintWidth_max="480dp">
+        <!-- Design modelled after item layouts. -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardJournal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginBottom="25dp"
+            app:cardCornerRadius="10dp"
+            app:cardBackgroundColor="#F0EDE5">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:padding="15dp">
+                <!-- Title Text Input component. -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="8dp"
+                    app:placeholderText = "@string/journal_title"
+                    app:placeholderTextColor="@color/black"
+                    app:expandedHintEnabled="false"
+                    app:boxBackgroundColor="#F0EDE5"
+                    app:boxBackgroundMode="filled"
+                    app:boxStrokeWidth="0dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editJournalTitle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="#004643"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="0dp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <!-- Description Text Input component. -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    app:placeholderText = "@string/journal_description"
+                    app:placeholderTextColor="@color/black"
+                    app:expandedHintEnabled="false"
+                    app:boxBackgroundColor="#F0EDE5"
+                    app:boxBackgroundMode="filled"
+                    app:boxStrokeWidth="0dp">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/editJournalDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="top"
+                        android:textSize="14sp"
+                        android:textColor="#004643"
+                        android:inputType="textMultiLine"
+                        android:minLines="2"
+                        android:scrollbars="vertical"
+                        android:paddingStart="0dp"
+                        android:paddingEnd="0dp"/>
+                </com.google.android.material.textfield.TextInputLayout>
+                <!-- Date Text View component. -->
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/textJournalDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/example_date"
+                    android:visibility="visible"
+                    android:textColor="#004643"
+                    android:alpha="0.6"
+                    android:textSize="12sp" />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <!--
+            Save Button component.
+            Saves changes / creates new journal.
+            Returns to previous activity.
+            -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnConfirmJournal"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginEnd="10dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:text="@string/save"
+                android:textColor="#004643"
+                android:textSize="18sp"
+                app:backgroundTint="#F0EDE5"
+                app:cornerRadius="10dp" />
+            <!--
+            Close Button component.
+            Returns to previous activity without.
+            Unsaved changes are not saved.
+            -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnCancelJournal"
+                style="@style/Widget.Material3.Button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingTop="16dp"
+                android:paddingBottom="16dp"
+                android:text="@string/close"
+                android:textColor="#004643"
+                android:textSize="18sp"
+                app:backgroundTint="#F0EDE5"
+                app:cornerRadius="10dp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
